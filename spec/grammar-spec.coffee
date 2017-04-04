@@ -134,3 +134,13 @@ describe "SQL grammar", ->
     {tokens} = grammar.tokenizeLine('timetz (2)')
     expect(tokens[0]).toEqual value: 'timetz', scopes: ['source.sql', 'storage.type.sql']
     expect(tokens[2]).toEqual value: '2', scopes: ['source.sql', 'constant.numeric.sql']
+
+  it 'tokenizes boolean literals', ->
+    {tokens} = grammar.tokenizeLine('TRUE')
+    expect(tokens[0]).toEqual value: 'TRUE', scopes: ['source.sql', 'constant.language.sql']
+
+    {tokens} = grammar.tokenizeLine('FALSE')
+    expect(tokens[0]).toEqual value: 'FALSE', scopes: ['source.sql', 'constant.language.sql']
+
+    {tokens} = grammar.tokenizeLine('UNKNOWN')
+    expect(tokens[0]).toEqual value: 'UNKNOWN', scopes: ['source.sql', 'constant.language.sql']
