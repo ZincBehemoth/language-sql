@@ -144,3 +144,25 @@ describe "SQL grammar", ->
 
     {tokens} = grammar.tokenizeLine('UNKNOWN')
     expect(tokens[0]).toEqual value: 'UNKNOWN', scopes: ['source.sql', 'constant.language.sql']
+
+  it 'tokenizes boolean predicates', ->
+    {tokens} = grammar.tokenizeLine('IS TRUE')
+    expect(tokens[0]).toEqual value: 'IS TRUE', scopes: ['source.sql', 'keyword.operator.logical.sql']
+
+    {tokens} = grammar.tokenizeLine('IS FALSE')
+    expect(tokens[0]).toEqual value: 'IS FALSE', scopes: ['source.sql', 'keyword.operator.logical.sql']
+
+    {tokens} = grammar.tokenizeLine('TRUE IS UNKNOWN')
+    expect(tokens[0]).toEqual value: 'TRUE', scopes: ['source.sql', 'constant.language.sql']
+    expect(tokens[2]).toEqual value: 'IS UNKNOWN', scopes: ['source.sql', 'keyword.operator.logical.sql']
+
+    {tokens} = grammar.tokenizeLine('TRUE IS NOT UNKNOWN')
+    expect(tokens[0]).toEqual value: 'TRUE', scopes: ['source.sql', 'constant.language.sql']
+    expect(tokens[2]).toEqual value: 'IS NOT UNKNOWN', scopes: ['source.sql', 'keyword.operator.logical.sql']
+
+  it 'tokenizes null predicates', ->
+    {tokens} = grammar.tokenizeLine('IS NULL')
+    expect(tokens[0]).toEqual value: 'IS NULL', scopes: ['source.sql', 'keyword.operator.logical.sql']
+
+    {tokens} = grammar.tokenizeLine('IS NOT NULL')
+    expect(tokens[0]).toEqual value: 'IS NOT NULL', scopes: ['source.sql', 'keyword.operator.logical.sql']
