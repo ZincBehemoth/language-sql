@@ -136,11 +136,15 @@
     'name': 'constant.numeric.sql'
   }
   {
+    'match': '(?i:\\b(true|false|unknown)\\b)'
+    'name': 'constant.language.sql'
+  }
+  {
     'match': '(?i:\\b(select(\\s+distinct)?|insert\\s+(ignore\\s+)?into|update|delete|from|use|declare|set|where|group\\s+by|or|like|between|and|(union|except|intersect)(\\s+all)?|having|order\\s+by|partition\\s+by|limit|offset|(inner|cross)\\s+join|join|straight_join|(left|right)(\\s+outer)?\\s+join|natural(\\s+(left|right)(\\s+outer)?)?\\s+join|using|regexp|rlike|with|exists)\\b)'
     'name': 'keyword.other.DML.sql'
   }
   {
-    'match': '(?i:\\b(on|(is\\s+)?(not\\s+)?null|auto_increment)\\b)'
+    'match': '(?i:\\b(on|(not\\s+)?null|auto_increment)\\b)'
     'name': 'keyword.other.DDL.create.II.sql'
   }
   {
@@ -194,6 +198,10 @@
   {
     'match': '\\|\\|'
     'name': 'keyword.operator.concatenator.sql'
+  }
+  {
+    'match': '(?i:\\bis\\s+(?:not\\s+)?(?:true|false|unknown|null))\\b'
+    'name': 'keyword.operator.logical.sql'
   }
   {
     'comment': 'List of SQL99 built-in functions from http://www.oreilly.com/catalog/sqlnut/chapter/ch04.html'
