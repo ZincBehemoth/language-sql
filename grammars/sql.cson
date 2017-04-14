@@ -128,8 +128,12 @@
             '''
   }
   {
-    'match': '(?i:\\b((?:primary|foreign)\\s+key|references|on\\sdelete(\\s+cascade)?|check|constraint|unique|default)\\b)'
+    'match': '(?i:\\b((?:primary|foreign)\\s+key|references|match\\s+(?:full|partial|simple)|on\\s+(?:delete|update)\\s+(?:cascade|no\\s+action|restrict|set\\s+null|set\\s+default)|(?:not\\s+)?deferrable|initially\\s+(?:deferred|immediate)|check|constraint|unique|default)\\b)'
     'name': 'storage.modifier.sql'
+  }
+  {
+    'match': '(?i:\\b(exclude\\s+using|gist)\\b)'
+    'name': 'storage.modifier.psql.sql'
   }
   {
     'match': '\\b(\\d+\\.\\d+)|(\\d+\\.)|(\\.\\d+)|\\b(\\d+)\\b'
