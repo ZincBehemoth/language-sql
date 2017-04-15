@@ -189,7 +189,7 @@
     'name': 'keyword.other.order.sql'
   }
   {
-    'match': '(?i)\\b(case|when|then|else|end|if|for|do|loop)\\b'
+    'match': '(?i)\\b(case|when|then|else|end|if|for|do|loop|while|return)\\b'
     'name': 'keyword.control.sql'
   }
   {
