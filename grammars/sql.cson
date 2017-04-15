@@ -217,6 +217,10 @@
     'name': 'support.function.scalar.sql'
   }
   {
+    'match': '(?i)\\b(coalesce|nullif|greatest|least)\\b'
+    'name': 'support.function.conditional.sql'
+  }
+  {
     'match': '(?i)\\b(ABS|ACOS|ASIN|ATAN|ATAN2|CEIL|CEILING|CONV|COS|COT|CRC32|DEGREES|EXP|FLOOR|LN|LOG|LOG10|LOG2|MOD|PI|POW|POWER|RADIANS|RAND|ROUND|SIGN|SIN|SQRT|TAN|TRUNCATE)\\b'
     'name': 'support.function.math.sql'
   }
