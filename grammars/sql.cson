@@ -188,6 +188,10 @@
     'name': 'keyword.other.case.sql'
   }
   {
+    'match': '(?i)\\b(cast)\\b'
+    'name': 'keyword.other.cast.sql'
+  }
+  {
     'match': '\\*'
     'name': 'keyword.operator.star.sql'
   }
@@ -204,7 +208,7 @@
     'name': 'keyword.operator.concatenator.sql'
   }
   {
-    'match': '(?i:\\bis\\s+(?:not\\s+)?(?:true|false|unknown|null))\\b'
+    'match': '(?i:\\bis\\s+(?:not\\s+)?(?:true|false|unknown|null|distinct\\s+from))\\b'
     'name': 'keyword.operator.logical.sql'
   }
   {
