@@ -23,7 +23,7 @@
         'name': 'keyword.other.DML.sql'
       '6':
         'name': 'entity.name.function.sql'
-    'match': '(?i:^\\s*(create(?:\\s+or\\s+replace)?)\\s+(aggregate|conversion|database|domain|function|group|(unique\\s+)?index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view)\\b(?:\\s+(if\\s+not\\s+exists)\\b)?)(?:\\s+([\'"`]?)(\\w+)\\5)?'
+    'match': '(?i:^\\s*(create(?:\\s+or\\s+replace)?)\\s+(aggregate|conversion|database|domain|function|procedure|group|(unique\\s+)?index|language|operator class|operator|rule|schema|sequence|table|tablespace|trigger|type|user|view)\\b(?:\\s+(if\\s+not\\s+exists)\\b)?)(?:\\s+([\'"`]?)(\\w+)\\5)?'
     'name': 'meta.create.sql'
   }
   {
@@ -165,7 +165,7 @@
     'name': 'keyword.other.DML.II.sql'
   }
   {
-    'match': '(?i:\\b(begin(\\s+work)?|start\\s+transaction|commit(\\s+work)?|rollback(\\s+work)?)\\b)'
+    'match': '(?i:\\b(begin(\\s+(?:work|atomic))?|start\\s+transaction|commit(\\s+work)?|rollback(\\s+work)?)\\b)'
     'name': 'keyword.other.LUW.sql'
   }
   {
