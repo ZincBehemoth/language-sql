@@ -265,7 +265,7 @@
     'name': 'support.function.array.sql'
   }
   {
-    'match': '(?i)\\b(CONCATENATE|CONVERT|LOWER|SUBSTRING|TRANSLATE|TRIM|UPPER)\\b'
+    'match': '(?i)\\b(ascii|(?:BIT|CHAR|CHARACTER|OCTET)_LENGTH|chr|CONCAT(?:ENATE|_ws)?|CONVERT(?:_from|_to)?|decode|format|initcap|left|length|(?:l|r)pad|LOWER|md5|OVERLAY|POSITION|parse_ident|pg_client_encoding|quote_(?:ident|literal|nullable)|regexp_(?:matches|replace|split_to_(?:array|table))|repeat|replace|reverse|right|split_part|strpos|SUBSTR(?:ING)?|to_(ascii|hex)|TRANSLATE|(?:b_|l|r)?TRIM|UPPER)(?=\\s*\\()'
     'name': 'support.function.string.sql'
   }
   {
