@@ -121,10 +121,10 @@
               \\b(bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|datetime|double\\sprecision|enum|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text)\\b
 
               # numeric suffix, capture 2 + 3i
-              |\\b(bit\\svarying|character\\s(?:varying)?|tinyint|var\\schar|float)\\((\\d+)\\)
+              |\\b(bit\\svarying|character\\s(?:varying)?|tinyint|var\\schar)\\((\\d+)\\)
 
               # optional numeric suffix, capture 4 + 5i
-              |\\b(char|number|n?varchar\\d?|time(?:stamp)?tz)\\b(?:\\s*\\(\\s*(\\d+)\\s*\\))?
+              |\\b(char|float|number|n?varchar\\d?|time(?:stamp)?tz)\\b(?:\\s*\\(\\s*(\\d+)\\s*\\))?
 
               # special case, capture 6 + 7i + 8i
               |\\b(numeric|decimal)\\b(?:\\((\\d+),(\\d+)\\))?
