@@ -201,6 +201,14 @@
     'name': 'keyword.other.cast.sql'
   }
   {
+    'match': '(?i)\\b(year|month|day|hour|minute|second|century|decade|dow|epoch|microseconds|millenium|milliseconds|quarter|timezone(?:_hour|_minute))\\b'
+    'name': 'keyword.other.time.sql'
+  }
+  {
+    'match': '(?i)\\b(at\\s+time\\s+zone)\\b'
+    'name': 'keyword.other.time.sql'
+  }
+  {
     'match': '\\*'
     'name': 'keyword.operator.star.sql'
   }
