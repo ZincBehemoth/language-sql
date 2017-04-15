@@ -153,7 +153,7 @@
     'name': 'constant.language.sql'
   }
   {
-    'match': '(?i:\\b(select(\\s+distinct)?|insert\\s+(ignore\\s+)?into|update|delete|from|use|declare|set|where|group\\s+by|or|like|between|and|(union|except|intersect)(\\s+all)?|having|order\\s+by|partition\\s+by|limit|offset|(inner|cross)\\s+join|join|straight_join|(left|right)(\\s+outer)?\\s+join|natural(\\s+(left|right)(\\s+outer)?)?\\s+join|using|regexp|rlike|with|exists)\\b)'
+    'match': '(?i:\\b(select(\\s+distinct)?|insert\\s+(ignore\\s+)?into|update|delete|from|use|declare|set|where|group\\s+by|(union|except|intersect)(\\s+all)?|having|order\\s+by|partition\\s+by|limit|offset|(inner|cross)\\s+join|join|straight_join|(left|right)(\\s+outer)?\\s+join|natural(\\s+(left|right)(\\s+outer)?)?\\s+join|using|with|regexp)\\b)'
     'name': 'keyword.other.DML.sql'
   }
   {
@@ -175,10 +175,6 @@
   {
     'match': '(?i:(\\bnot\\s+)?\\bin\\b)'
     'name': 'keyword.other.data-integrity.sql'
-  }
-  {
-    'match': '(?i:\\bnot\\b)'
-    'name': 'keyword.other.not.sql'
   }
   {
     'match': '(?i:^\\s*(comment\\s+on\\s+(table|column|aggregate|constraint|database|domain|function|index|operator|rule|schema|sequence|trigger|type|view))\\s+.*?\\s+(is)\\s+)'
@@ -225,8 +221,18 @@
     'name': 'keyword.operator.concatenator.sql'
   }
   {
-    'match': '(?i:\\bis\\s+(?:not\\s+)?(?:true|false|unknown|null|distinct\\s+from))\\b'
+    'match': '(?i:\\b(or|like|between|and|rlike|exists|not)\\b)'
     'name': 'keyword.operator.logical.sql'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'keyword.operator.logical.sql'
+      '2':
+        'name': 'constant.language.sql'
+      '3':
+        'name': 'keyword.operator.logical.sql'
+    'match': '(?i:\\b(is\\s+(?:not\\s+)?)(?:(true|false|unknown|null)|(distinct\\s+from)))\\b'
   }
   {
     'comment': 'List of SQL99 built-in functions from http://www.oreilly.com/catalog/sqlnut/chapter/ch04.html'
