@@ -118,7 +118,7 @@
     'match': '''
               (?xi)
               # normal stuff, capture 1
-              \\b(array|bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|datetime|double\\sprecision|enum|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text)\\b
+              \\b(array|bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|datetime|double\\sprecision|enum|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text|(?:int4|int8|num|ts|tstz|date)range)\\b
 
               # numeric suffix, capture 2 + 3i
               |\\b(bit\\svarying|character\\s(?:varying)?|tinyint|var\\schar)\\((\\d+)\\)
@@ -240,7 +240,7 @@
     'name': 'support.function.scalar.sql'
   }
   {
-    'match': '(?i:\\b(returns|returning|language)\\b)'
+    'match': '(?i:\\b(returns|returning|language|owned\\s+by)\\b)'
     'name': 'keyword.other.sql'
   }
   {
