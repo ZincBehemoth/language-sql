@@ -193,8 +193,8 @@
     'name': 'keyword.other.order.sql'
   }
   {
-    'match': '(?i)\\b(case|when|then|else|end)\\b'
-    'name': 'keyword.other.case.sql'
+    'match': '(?i)\\b(case|when|then|else|end|if|for|do|loop)\\b'
+    'name': 'keyword.control.sql'
   }
   {
     'match': '(?i)\\b(cast)\\b'
