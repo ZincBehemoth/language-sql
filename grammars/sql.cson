@@ -240,6 +240,14 @@
     'name': 'support.function.scalar.sql'
   }
   {
+    'match': '(?i:\\b(returns|returning|language)\\b)'
+    'name': 'keyword.other.sql'
+  }
+  {
+    'match': '(?i:\\b(plpgsql|plpython(?:2|3)?u)\\b)'
+    'name': 'support.other.language.sql'
+  }
+  {
     'match': '(?i)\\b(coalesce|nullif|greatest|least)\\b'
     'name': 'support.function.conditional.sql'
   }
