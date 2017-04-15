@@ -118,7 +118,7 @@
     'match': '''
               (?xi)
               # normal stuff, capture 1
-              \\b(bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|datetime|double\\sprecision|enum|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text)\\b
+              \\b(array|bigint|bigserial|bit|boolean|box|bytea|cidr|circle|date|datetime|double\\sprecision|enum|inet|int|integer|line|lseg|macaddr|money|oid|path|point|polygon|real|serial|smallint|sysdate|text)\\b
 
               # numeric suffix, capture 2 + 3i
               |\\b(bit\\svarying|character\\s(?:varying)?|tinyint|var\\schar)\\((\\d+)\\)
@@ -251,6 +251,10 @@
     'comment': 'List of SQL99 built-in functions from http://www.oreilly.com/catalog/sqlnut/chapter/ch04.html'
     'match': '(?i)\\b(AVG|COUNT|MIN|MAX|SUM)(?=\\s*\\()'
     'name': 'support.function.aggregate.sql'
+  }
+  {
+    'match': '(?i)\\b(array_(?:append|cat|n?dims|fill|length|lower|positions?|prepend|remove|replace|to_string|upper)|cardinality|string_to_array|unnest)(?=\\s*\\()'
+    'name': 'support.function.array.sql'
   }
   {
     'match': '(?i)\\b(CONCATENATE|CONVERT|LOWER|SUBSTRING|TRANSLATE|TRIM|UPPER)\\b'
